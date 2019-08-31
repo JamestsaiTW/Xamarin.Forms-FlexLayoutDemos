@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FlexLayoutDemos.Pages.ExperimentPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:utilies="clr-namespace:FlexLayoutDemos.Utilies"
+    Title="Experiment">
+    <Grid Margin="10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Control Panel  -->
+        <Grid Grid.Row="0" BindingContext="{x:Reference flexLayout}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Label">
+                        <Setter Property="VerticalOptions" Value="Center" />
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Number of items:" />
+
+            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+
+                <Label Text="{Binding Source={x:Reference numberStepper}, Path=Value, StringFormat='{0:F0}'}" />
+
+                <Stepper
+                    x:Name="numberStepper"
+                    Increment="1"
+                    Maximum="99"
+                    Minimum="0"
+                    ValueChanged="OnNumberStepperValueChanged"
+                    Value="3" />
+            </StackLayout>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Direction:" />
+
+            <utilies:EnumPicker Grid.Row="1" Grid.Column="1" EnumType="{x:Type FlexDirection}" SelectedItem="{Binding Direction}" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Wrap:" />
+
+            <utilies:EnumPicker Grid.Row="2" Grid.Column="1" EnumType="{x:Type FlexWrap}" SelectedItem="{Binding Wrap}" />
+
+            <Label Grid.Row="3" Grid.Column="0" Text="JustifyContent:" />
+
+            <utilies:EnumPicker Grid.Row="3" Grid.Column="1" EnumType="{x:Type FlexJustify}" SelectedItem="{Binding JustifyContent}" />
+
+            <Label Grid.Row="4" Grid.Column="0" Text="AlignItems:" />
+
+            <utilies:EnumPicker Grid.Row="4" Grid.Column="1" EnumType="{x:Type FlexAlignItems}" SelectedItem="{Binding AlignItems}" />
+
+            <Label Grid.Row="5" Grid.Column="0" Text="AlignContent:" />
+
+            <utilies:EnumPicker Grid.Row="5" Grid.Column="1" EnumType="{x:Type FlexAlignContent}" SelectedItem="{Binding AlignContent}" />
+        </Grid>
+
+        <!--  FlexLayout  -->
+        <FlexLayout x:Name="flexLayout" Grid.Row="1" BackgroundColor="AliceBlue" />
+    </Grid>
+</ContentPage>

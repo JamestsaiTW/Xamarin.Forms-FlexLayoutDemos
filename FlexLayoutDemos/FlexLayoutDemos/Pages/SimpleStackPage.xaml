@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FlexLayoutDemos.Pages.SimpleStackPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:utilies="clr-namespace:FlexLayoutDemos.Utilies"
+    Title="Simple Stack">
+
+    <FlexLayout AlignItems="Center" Direction="Column" JustifyContent="SpaceEvenly">
+
+        <Label FontSize="Large" Text="FlexLayout in Action" />
+
+        <Image Source="{utilies:ImageResource FlexLayoutDemos.Assets.Images.SeatedMonkey.jpg}" />
+
+        <Button Text="Do-Nothing Button" />
+
+        <Label Text="Another Label" />
+    </FlexLayout>
+</ContentPage>

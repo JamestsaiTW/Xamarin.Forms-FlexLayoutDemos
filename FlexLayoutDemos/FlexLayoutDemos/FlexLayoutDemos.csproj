@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,65 +9,77 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="CatalogItemsStyles.css" />
-    <None Remove="Images\Banana.jpg" />
-    <None Remove="Images\FacePalm.jpg" />
-    <None Remove="Images\monkey.png" />
-    <None Remove="Images\SeatedMonkey.jpg" />
+    <None Remove="Assets\Icons\Basic.png" />
+    <None Remove="Assets\Icons\Basis.png" />
+    <None Remove="Assets\Icons\Grow.png" />
+    <None Remove="Assets\Icons\Shrink.png" />
+    <None Remove="Assets\Styles\CatalogItemsStyles.css" />
+    <None Remove="Assets\Images\Banana.jpg" />
+    <None Remove="Assets\Images\FacePalm.jpg" />
+    <None Remove="Assets\Images\monkey.png" />
+    <None Remove="Assets\Images\SeatedMonkey.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\Banana.jpg" />
-    <EmbeddedResource Include="Images\FacePalm.jpg" />
-    <EmbeddedResource Include="Images\monkey.png" />
-    <EmbeddedResource Include="Images\SeatedMonkey.jpg" />
+    <EmbeddedResource Include="Assets\Icons\Basic.png" />
+    <EmbeddedResource Include="Assets\Icons\Basis.png" />
+    <EmbeddedResource Include="Assets\Icons\Grow.png" />
+    <EmbeddedResource Include="Assets\Icons\Shrink.png" />
+    <EmbeddedResource Include="Assets\Images\Banana.jpg" />
+    <EmbeddedResource Include="Assets\Images\FacePalm.jpg" />
+    <EmbeddedResource Include="Assets\Images\monkey.png" />
+    <EmbeddedResource Include="Assets\Images\SeatedMonkey.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
+    <PackageReference Include="LiveXAML" Version="2.1.72" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
-    <Compile Update="GrowExperimentPage.xaml.cs">
+    <Compile Update="Pages\GrowExperimentPage.xaml.cs">
       <DependentUpon>GrowExperimentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="PhotoWrappingPage.xaml.cs">
+    <Compile Update="Pages\PhotoWrappingPage.xaml.cs">
       <DependentUpon>PhotoWrappingPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="BasisExperimentPage.xaml">
+    <EmbeddedResource Update="AppShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BasisExperimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="CatalogItemsPage.xaml">
+    <EmbeddedResource Update="Pages\CatalogItemsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="CssCatalogItemsPage.xaml">
+    <EmbeddedResource Update="Pages\CssCatalogItemsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GrowExperimentPage.xaml">
+    <EmbeddedResource Update="Pages\GrowExperimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="HolyGrailLayoutPage.xaml">
+    <EmbeddedResource Update="Pages\HolyGrailLayoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PhotoWrappingPage.xaml">
+    <EmbeddedResource Update="Pages\PhotoWrappingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ExperimentPage.xaml">
+    <EmbeddedResource Update="Pages\ExperimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="HomePage.xaml">
+    <EmbeddedResource Update="Pages\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ShrinkExperimentPage.xaml">
+    <EmbeddedResource Update="Pages\ShrinkExperimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SimpleStackPage.xaml">
+    <EmbeddedResource Update="Pages\SimpleStackPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

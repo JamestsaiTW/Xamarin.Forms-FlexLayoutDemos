@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FlexLayoutDemos.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:FlexLayoutDemos.Pages"
+    xmlns:utilies="clr-namespace:FlexLayoutDemos.Utilies"
+    Title="FlexLayout Demos"
+    mc:Ignorable="d">
+    <FlyoutItem Title="SimpleStackPage">
+        <Tab>
+            <ShellContent>
+                <pages:SimpleStackPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="PhotoWrapping">
+        <Tab>
+            <ShellContent>
+                <pages:PhotoWrappingPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="HolyGrailLayout">
+        <Tab>
+            <ShellContent>
+                <pages:HolyGrailLayoutPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="CatalogItems" FlyoutDisplayOptions="AsSingleItem">
+        <Tab>
+            <ShellContent Title="Resources">
+                <pages:CatalogItemsPage />
+            </ShellContent>
+            <ShellContent Title="CSS">
+                <pages:CssCatalogItemsPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="All Experiments" FlyoutDisplayOptions="AsSingleItem">
+        <Tab Title="Basic" Icon="{utilies:ImageResource FlexLayoutDemos.Assets.Icons.Basic.png}">
+            <ShellContent>
+                <pages:ExperimentPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Basis" Icon="{utilies:ImageResource FlexLayoutDemos.Assets.Icons.Basis.png}">
+            <ShellContent>
+                <pages:BasisExperimentPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Grow" Icon="{utilies:ImageResource FlexLayoutDemos.Assets.Icons.Grow.png}">
+            <ShellContent>
+                <pages:GrowExperimentPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Shrink" Icon="{utilies:ImageResource FlexLayoutDemos.Assets.Icons.Shrink.png}">
+            <ShellContent>
+                <pages:ShrinkExperimentPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+</Shell>
